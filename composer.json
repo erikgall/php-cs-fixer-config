@@ -1,10 +1,12 @@
 {
     "name": "erikgall/php-cs-fixer-config",
-    "description": "Personal FriendsOfPHP/PHP-CS-Fixer configuration.",
+    "description": "FriendsOfPHP/PHP-CS-Fixer configuration.",
     "type": "library",
     "require": {
-        "php": "^7.2.5",
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "illuminate/console": "^7.2",
+        "illuminate/filesystem": "^7.2",
+        "illuminate/support": "^7.2"
     },
     "license": "MIT",
     "authors": [
@@ -23,5 +25,12 @@
 	},
 	"autoload-dev": {
 		"ErikGall\\PhpCsFixer\\Tests\\": "tests/"
-	}
+	},
+	"extra": {
+        "laravel": {
+            "providers": [
+                "ErikGall\\PhpCsFixer\\ServiceProvider"
+            ]
+        }
+    }
 }

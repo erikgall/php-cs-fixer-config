@@ -32,6 +32,24 @@ class Config extends BaseConfig
     }
 
     /**
+     * Set the finder for a Laravel project.
+     *
+     * @param  string $projectPath
+     * @return $this
+     */
+    public function forLaravel(string $projectPath): Config
+    {
+        $this->getFinder()
+            ->in($projectPath)
+            ->append(['.php_cs'])
+            ->exclude(['bootstrap', 'storage', 'vendor'])
+            ->notPath('server.php')
+            ->notPath('public/index.php');
+
+        return $this;
+    }
+
+    /**
      * Setup and configure the instance.
      *
      * @return void

@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * PHP-CS-Fixer configuration.
+ *
+ * @author Erik Galloway <erikgalloway8@gmail.com>
+ */
+return (new ErikGall\PhpCsFixer\Config())->forLaravel(__DIR__);
